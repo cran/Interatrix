@@ -11,8 +11,8 @@
 \tabular{ll}{
 Package: \tab Interatrix\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2015-03-19\cr
+Version: \tab 1.1.1\cr
+Date: \tab 2015-07-03\cr
 License: \tab GPL (>= 2)\cr
 }
 }
