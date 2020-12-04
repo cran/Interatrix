@@ -68,7 +68,7 @@ among which \textit{AGE} gives the host age classes) and 2 serological statuses 
 These data are in the \texttt{dataInteratrix.rda} \texttt{R} binary file.\\
 
 When using your own data set, the input data must be a data frame including data for host individuals tested for both studied parasites, with the observed values of risk factors and serological statuses as columns and the host individuals as rows.
-The extension of the data file must be \textit{txt}, \textit{rda}, \textit{Rda}, \textit{rdata} or \textit{Rdata}.
+The extension of the data file must be \textit{txt} (data are separated by tabulations and the variables' name are in the first row), \textit{csv} (data are separated by comma and the variables' name are in the first row), \textit{rda}, \textit{Rda}, \textit{rdata} or \textit{Rdata}.
 Missing data are allowed but individuals with at least one missing data are omitted in the model. Missing data must be indicated by \texttt{NA}.\\
 Qualitative variables must be defined as factors in \texttt{R} (see the \texttt{as.factor} function). This is mainly needed when the explicit functions are used.
 Binary variables must be defined with the modalities \texttt{0} and \texttt{1}.
@@ -127,7 +127,7 @@ When using the second method, parallel computing is proposed to speed up simulat
 
 
 \section{Through command lines}
-When using the explicit functions, data must be loaded thanks to the command \texttt{read.table} (for \textit{txt} file) or \texttt{load} (for \texttt{R} binary file).
+When using the explicit functions, data must be loaded thanks to the command \texttt{read.table} (for \textit{txt} file), \texttt{read.csv} (for \textit{csv} file) or \texttt{load} (for \texttt{R} binary file).
 As mentionned previously, all qualitative variables must be defined as factors (see the \texttt{as.factor} function).\\
 
 There are two functions, one for each method: \textit{chi2Corr} (accounting for risk factors) and \textit{chi2CorrAge} (accounting for risk factors and for the cumulative effect of age).\\

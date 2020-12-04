@@ -7,7 +7,7 @@ chi2CorrGUI <- function() {
 	getFilename <- function () {
     fildial <- paste("tk_getOpenFile", "-filetypes { \
 	      {\"R binary files\" {.rda .rdata .Rdata .Rda}} \
-    		{\"text files\" {.txt}} }")
+        {\"text files\" {.txt .csv}} }")
 	 	filename <- tclvalue(.Tcl(fildial))
     if(filename == "") {
       tkmessageBox(title = "Error", message = "No file was selected!")
@@ -20,7 +20,9 @@ chi2CorrGUI <- function() {
 	filedescpath <- getFilename()
   ext <- file_ext(filedescpath)
   if(ext == "txt")
-		data.obs <- read.table(filedescpath, header = TRUE, sep = "\t")
+    data.obs <- read.table(filedescpath, header = TRUE, sep = "\t")
+  else if(ext == "csv")
+    data.obs <- read.csv(filedescpath, header = TRUE, sep = "\t")
   else
     data.obs <- get(load(filedescpath))
 	data.obs <- na.omit(data.obs)
